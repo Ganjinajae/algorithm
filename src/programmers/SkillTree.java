@@ -1,5 +1,10 @@
 package programmers;
 
+/**
+ * 스킬트리
+ * @author wldud
+ *
+ */
 public class SkillTree {
 
 	public static void main(String[] args) {

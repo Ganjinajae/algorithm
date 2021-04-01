@@ -1,5 +1,10 @@
 package programmers;
 
+/**
+ * 124 나라의 숫자
+ * @author wldud
+ *
+ */
 public class CountryNumber124 {
 
 	public static void main(String[] args) {
