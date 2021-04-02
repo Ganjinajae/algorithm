@@ -19,9 +19,8 @@ public class FineSquare {
         long answer = 0;
         
         for(int i=1; i<w; i++) {
-        	long s = h*i/w;
-        	System.out.println(s);
-        	answer += s;
+        	long value = h*i/w;
+        	answer += value;
         }
         
         return answer*2;
