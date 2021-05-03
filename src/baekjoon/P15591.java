@@ -11,6 +11,7 @@ import java.util.StringTokenizer;
 
 /**
  * MooTube (Silver) (실패)
+ * => 인접행렬, dfs로 했었고 시간초과 => 인접리스트로 바꾼 후 bfs로 진행(블로그 참조)
  * @author wldud
  *
  */
@@ -50,7 +51,7 @@ public class P15591 {
 			while(!q.isEmpty()) {
 				int node = q.poll();
 				for(int[] a : adj[node]) {
-					if(!visited[a[0]] && a[1] >=k) {
+					if(!visited[a[0]] && a[1]>=k) {
 						visited[a[0]] = true;
 						q.add(a[0]);
 						result++;
