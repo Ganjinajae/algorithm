@@ -1,0 +1,72 @@
+package baekjoon;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+/**
+ * ABCDE
+ * @author wldud
+ *
+ */
+public class P13023 {
+	
+	public static boolean[] visited;
+	public static List<List<Integer>> list;
+	public static int N, M;
+	public static int ans;
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		
+		visited = new boolean[N];
+		
+		list = new ArrayList<>();
+		for(int i=0; i<N; i++) {
+			list.add(new ArrayList<>());
+		}
+		
+		for(int i=0; i<M; i++) {
+			st = new StringTokenizer(br.readLine());
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			List<Integer> l = list.get(a);
+			l.add(b);
+			l = list.get(b);
+			l.add(a);
+		}
+		
+		for(int i=0; i<N; i++) {
+			if(ans == 0) {
+				dfs(i, 1);
+			}
+		}
+		
+		System.out.println(ans);
+	}
+	
+	public static void dfs(int n, int depth) {
+		if(depth == 5) {
+			ans = 1;
+			return;
+		}
+		visited[n] = true;
+		
+		List<Integer> lineList = list.get(n);
+		for(int i=0; i<lineList.size(); i++) {
+			int num = lineList.get(i);
+			if(!visited[num]) {
+				dfs(num, depth+1);
+			}
+		}
+		visited[n] = false; // 제대로 된 역할 알기 new visited[]랑 비교해서
+	}
+}
