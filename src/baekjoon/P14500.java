@@ -22,18 +22,18 @@ public class P14500 {
 			}
 			return;
 		}
+		visited[r][c] = true;
 		for(int i=0; i<4; i++) {
 			int nr = r+dr[i];
 			int nc = c+dc[i];
 			
 			if(nr>=0 && nr<N && nc>=0 && nc<M) {
 				if(!visited[nr][nc]) {
-					visited[nr][nc] = true;
 					dfs(nr, nc, cnt+1, sum+paper[nr][nc]);
-					visited[nr][nc] = false;
 				}
 			}
 		}
+		visited[r][c] = false;
 	}
 	
 	public static void exception(int r, int c) {
