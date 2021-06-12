@@ -58,10 +58,10 @@ public class P14500 {
 		}
 		
 		if(wing == 4) {
-			if(sum-min > max) {
-				max = sum-min;
-			}
+			sum = sum-min;
 		}
+		
+		max = Math.max(max, sum);
 	}
 	
 	public static void main(String[] args) throws IOException {
