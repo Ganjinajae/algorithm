@@ -31,7 +31,10 @@ public class P14226 {
 				break;
 			}
 			
-			q.add(new Screen(s.getNum(), s.getNum(), s.getSecond()+1));
+			if(!visited[s.getNum()][s.getNum()]) {
+				q.add(new Screen(s.getNum(), s.getNum(), s.getSecond()+1));
+				visited[s.getNum()][s.getNum()] = true;
+			}
 			if(s.getClipboard() != 0 && s.getNum()+s.clipboard <= S && !visited[s.getClipboard()][s.getNum()+s.clipboard]) {
 				q.add(new Screen(s.getClipboard(), s.getNum()+s.clipboard, s.getSecond()+1));
 				visited[s.getClipboard()][s.getNum()+s.clipboard] = true;
