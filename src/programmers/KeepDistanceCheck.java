@@ -16,7 +16,7 @@ public class KeepDistanceCheck {
 	char[][] waitingRoom;
 	int[] dr = {1, -1, 0, 0};
 	int[] dc = {0, 0, 1, -1};
-	int[][] visited;
+	boolean[][] visited;
 	
 	public static void main(String[] args) {
 		KeepDistanceCheck test = new KeepDistanceCheck();
@@ -26,10 +26,10 @@ public class KeepDistanceCheck {
 	}
 	
 	public boolean isSafe(int r, int c) {
-		visited = new int[5][5];
-		visited[r][c] = 1;
+		visited = new boolean[5][5];
+		visited[r][c] = true;
 		Queue<Point> q = new LinkedList<>();
-		q.add(new Point(r, c));
+		q.add(new Point(r, c, 0));
 		
 		boolean result = true;
 		
@@ -37,22 +37,29 @@ public class KeepDistanceCheck {
 			Point queue = q.poll();
 			int cR = queue.getR();
 			int cC = queue.getC();
+			int d = queue.getD();
 			
-			if(visited[cR][cC] == 2) continue;
+			if(d >= 2) continue;
 			
 			for(int i=0; i<4; i++) {
 				int nr = cR+dr[i];
 				int nc = cC+dc[i];
 				
 				if(nr>=0 && nc>=0 && nr<5 && nc<5) {
-					if(waitingRoom[nr][nc] == 'P') {
-						result = false;
-						break;
+					if(!visited[nr][nc]) {
+						if(waitingRoom[nr][nc] == 'P') {
+							if(d<=2) {
+								result = false;
+								break;
+							}
+						}
+						
+						if(waitingRoom[nr][nc] == 'O') {
+							visited[nr][nc] = true;
+							q.add(new Point(nr, nc, d+1));
+						}
 					}
-					if(waitingRoom[nr][nc] != 'X' && visited[nr][nc] == 0) {
-						visited[nr][nc] = visited[r][c]+1;
-						q.add(new Point(nr, nc));
-					}
+					
 				}
 			}
 			
@@ -60,47 +67,9 @@ public class KeepDistanceCheck {
 				break;
 			}
 		}
-		
+			
 		return result;
 	}
-//	public boolean isSafe(int r, int c) {
-//		visited = new int[5][5];
-//		visited[r][c] = 1;
-//		Queue<Point> q = new LinkedList<>();
-//		q.add(new Point(r, c));
-//		
-//		boolean result = true;
-//		
-//		while(!q.isEmpty()) {
-//			Point queue = q.poll();
-//			int cR = queue.getR();
-//			int cC = queue.getC();
-//			
-//			if(visited[cR][cC] == 2) continue;
-//			
-//			for(int i=0; i<4; i++) {
-//				int nr = cR+dr[i];
-//				int nc = cC+dc[i];
-//				
-//				if(nr>=0 && nc>=0 && nr<5 && nc<5) {
-//					if(waitingRoom[nr][nc] == 'P') {
-//						result = false;
-//						break;
-//					}
-//					if(waitingRoom[nr][nc] != 'X' && visited[nr][nc] == 0) {
-//						visited[nr][nc] = visited[r][c]+1;
-//						q.add(new Point(nr, nc));
-//					}
-//				}
-//			}
-//			
-//			if(!result) {
-//				break;
-//			}
-//		}
-//		
-//		return result;
-//	}
 	
 	public int[] solution(String[][] places) {
         int[] answer = new int[5];
@@ -116,7 +85,7 @@ public class KeepDistanceCheck {
         		for(int k=0; k<places[i][j].length(); k++) { // ¿­ 
         			waitingRoom[j][k] = places[i][j].charAt(k);
         			if(places[i][j].charAt(k) == 'P') {
-        				list.add(new Point(j, k));
+        				list.add(new Point(j, k, 0));
         			}
         		}
         	}
@@ -142,21 +111,36 @@ public class KeepDistanceCheck {
 class Point {
 	int r;
 	int c;
+	int d;
 	
-	Point(int r, int c) {
+	Point(int r, int c, int d) {
 		this.r = r;
 		this.c = c;
+		this.d = d;
 	}
+
 	public int getR() {
 		return r;
 	}
+
 	public void setR(int r) {
 		this.r = r;
 	}
+
 	public int getC() {
 		return c;
 	}
+
 	public void setC(int c) {
 		this.c = c;
 	}
+
+	public int getD() {
+		return d;
+	}
+
+	public void setD(int d) {
+		this.d = d;
+	}
+	
 }
