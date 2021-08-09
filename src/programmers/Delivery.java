@@ -1,5 +1,9 @@
 package programmers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 /**
  * ¹è´Þ
  * @author wldud
@@ -7,10 +11,9 @@ package programmers;
  */
 public class Delivery {
 	
-	static int ans;
+	static ArrayList<Edge>[] list;
+	static int[] distance;
 	static int sK;
-	static int[][] arr = new int[51][51];
-	static boolean[][] visited = new boolean[51][51];
 
 	public static void main(String[] args) {
 		Delivery test = new Delivery();
@@ -19,40 +22,80 @@ public class Delivery {
 		int[][] road = {{1,2,1},{1,3,2},{2,3,2},{3,4,3},{3,5,2},{3,5,3},{5,6,1}};
 		int K = 4;
 		int answer = test.solution(N, road, K);
-		System.out.println(ans);
+		System.out.println(answer);
+	}
+	
+	public void dijkstra() {
+		
+		PriorityQueue<Edge> q = new PriorityQueue<>();
+		q.add(new Edge(1, 0));
+		
+		while(!q.isEmpty()) {
+			Edge edge = q.poll();
+			int vertex = edge.vertex;
+			int weight = edge.weight;
+			
+			//
+			if(weight > distance[vertex]) {
+				continue;
+			}
+			
+			for(int i=0; i<list[vertex].size(); i++) {
+				int vertex2 = list[vertex].get(i).vertex;
+				int weight2 = list[vertex].get(i).weight + weight;
+				if(weight2 < distance[vertex2]) {
+					distance[vertex2] = weight2;
+					q.add(new Edge(vertex2, weight2));
+				}
+			}
+		}
+		
 	}
 	
 	public int solution(int N, int[][] road, int K) {
+		
+		int answer = 0;
+		list = new ArrayList[N+1];
+		distance = new int[N+1];
+		Arrays.fill(distance, Integer.MAX_VALUE);
+		for(int i=1; i<=N; i++) {
+			list[i] = new ArrayList<>();
+		}
+		
         for(int i=0; i<road.length; i++) {
        		int a = road[i][0];
        		int b = road[i][1];
        		int v = road[i][2];
-       		arr[a][b] = v;
-       		arr[b][a] = v;
+       		list[a].add(new Edge(b, v));
+       		list[b].add(new Edge(a, v));
         }
-        sK = K;
-        visited[1][1] = true;
-        dfs(1, 1, 0);
         
-        return ans;
+        distance[1] = 0;
+        
+        dijkstra();
+        
+        for(int i=1; i<=N; i++) {
+        	if(distance[i] <= K) {
+        		answer++;
+        	}
+        }
+        return answer;
     }
 	
-	public void dfs(int from, int cnt, int value) {
-		if(value > sK) {
-			if(cnt > ans) {
-				ans = cnt;
-			}
-			return;
-		}
-		
-		for(int i=1; i<=50; i++) {
-			if(!visited[from][i] && arr[from][i] > 0) {
-				visited[from][i] = true;
-				visited[i][from] = true;
-				dfs(i, cnt+1, value+arr[from][i]);
-				visited[from][i] = false;
-				visited[i][from] = false;
-			}
-		}
+}
+
+class Edge implements Comparable<Edge> {
+	
+	int vertex;
+	int weight;
+	
+	public Edge(int vertex, int weight) {
+		this.vertex = vertex;
+		this.weight = weight;
+	}
+
+	@Override
+	public int compareTo(Edge o) {
+		return weight-o.weight;
 	}
 }
