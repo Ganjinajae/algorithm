@@ -47,6 +47,7 @@ public class VisitLength {
 				continue;
 			}
 
+			// visited대신 set을 활용하는 방법도 있다. String으로
 			if(!visited[r][c][nr][nc]) {
 				visited[r][c][nr][nc] = true;
 				visited[nr][nc][r][c] = true;
