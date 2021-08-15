@@ -1,7 +1,5 @@
 package programmers;
 
-import java.util.Arrays;
-
 /**
  * Çà·ÄÀÇ °ö¼À
  * @author wldud
