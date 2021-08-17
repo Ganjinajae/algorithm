@@ -1,5 +1,7 @@
 package programmers;
 
+import java.util.Stack;
+
 /**
  * 큰 수 만들기
  * @author wldud
@@ -8,23 +10,24 @@ package programmers;
 public class MakeBigNumber {
 
     public String solution(String number, int k) {
-        StringBuilder answer = new StringBuilder();
+        char[] result = new char[number.length() - k];
         
-        int idx = 0;
-        int max = 0;
-        for(int i=0; i<number.length()-k; i++) {
-        	max = 0;
-        	for(int j=idx; j<=i+k; j++) {
-        		int num = number.charAt(j)-'0';
-        		if(num > max) {
-        			max = num;
-        			idx = j+1;
-        		}
+        Stack<Character> stack = new Stack<>();
+        
+        for(int i=0; i<number.length(); i++) {
+        	char c = number.charAt(i);
+        	while(!stack.isEmpty() && c>stack.peek() && k>0) {
+        		stack.pop();
+        		k--;
         	}
-        	answer.append(max);
+        	stack.push(c);
         }
         
-        return answer.toString();
+        for (int i=0; i<result.length; i++) {
+            result[i] = stack.get(i);
+        }
+        
+        return new String(result);
     }
 	
 	public static void main(String[] args) {
