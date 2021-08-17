@@ -7,20 +7,15 @@ package programmers;
  */
 public class FibonacciNumbers {
 	
-	int[] m = new int[100001];
-	
 	public int fibonacci(int n) {
-		if(m[n] > 0) {
-			return m[n];
-		}
-		if(n < 1) {
-			return 0;
-		}
-		if(n == 1) {
-			return 1;
+		int[] d = new int[n+1];
+		d[0] = 0;
+		d[1] = 1;
+		for(int i=2; i<=n; i++) {
+			d[i] = (d[i-1]+d[i-2])%1234567;
 		}
 		
-		return m[n] = (fibonacci(n-1) + fibonacci(n-2))%1234567;
+		return d[n];
 	}
 
 	public int solution(int n) {
