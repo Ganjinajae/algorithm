@@ -10,43 +10,26 @@ public class BiggestSquareFind {
 	public int solution(int [][]board) {
         int n = board.length;
         int m = board[0].length;
-        int d = n > m ? m : n;
-        boolean flag = true;
+        int max = 0;
         
-        int c = 0;
-    	int r = 0;
-        while(d>0) {
-        	c = 0;
-        	r = 0;
-        	while(r+d <= n) {
-        		c = 0;
-        		while(c+d <= m) {
-        			flag = true;
-        			for(int i=r; i<r+d; i++) {
-        				for(int j=c; j<c+d; j++) {
-        					if(board[i][j] == 0) {
-        						flag = false;
-        						break;
-        					}
-        				}
-        			}
-        			c++;
-        			if(flag) {
-        				break;
-        			}
+        if(n<=1 || m<=1) return 1;
+        
+        for(int i=1; i<n; i++) {
+        	for(int j=1; j<m; j++) {
+        		if(board[i][j] >= 1) {
+        			int up = board[i-1][j];
+        			int left = board[i][j-1];
+        			int upperLeft = board[i-1][j-1];
+        			int min = Math.min(up, left);
+        			min = Math.min(min, upperLeft);
+        			
+        			board[i][j] = min+1;
+        			max = Math.max(max, board[i][j]); 
         		}
-    			if(flag) {
-    				break;
-    			}
-        		r++;
         	}
-        	if(flag) {
-        		break;
-        	}
-        	d--;
         }
-
-        return d*d;
+        
+        return max*max;
     }
 	
 	public static void main(String[] args) {
