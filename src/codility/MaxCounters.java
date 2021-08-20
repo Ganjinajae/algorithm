@@ -12,16 +12,22 @@ public class MaxCounters {
 		for(int i=0; i<A.length; i++) {
 			int idx = A[i]-1;
 			if(idx == N) {
-				arr = new int[N];
 				max = temp;
 			}
 			else {
-				arr[idx]++;
+				if(arr[idx] < max) {
+					arr[idx] = max+1;
+				}
+				else {
+					arr[idx]++;
+				}
 				temp = Math.max(arr[idx], temp);
 			}
 		}
 		for(int i=0; i<arr.length; i++) {
-			arr[i] += max;
+			if(arr[i] < max) {
+				arr[i] = max;
+			}
 		}
 		
 		return arr;
