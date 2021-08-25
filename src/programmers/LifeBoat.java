@@ -13,40 +13,12 @@ public class LifeBoat {
         int answer = 0;
         
         Arrays.sort(people);
+        int left = 0;
+        int right = 0;
         
-        
-        boolean[] visited = new boolean[people.length];
-        for(int i=0; i<people.length; i++) {
-        	int min = 987654321;
-        	if(visited[i]) continue;
-        	visited[i] = true;
-        	int n = people[i];
-        	int idx = -1;
-        	for(int j=0; j<people.length; j++) {
-        		if(visited[j]) continue;
-        		int m = people[j];
-        		int sum = n+m;
-        		if(sum == limit) {
-        			answer++;
-        			visited[j] = true;
-        			idx = -2;
-        			break;
-        		}
-        		int temp = Math.abs(limit-sum);
-        		if(limit-sum > 0) {
-        			 if(temp < min) {
-        				 temp = min;
-        				 idx = j;
-        			 }
-        		}
-        	}
-        	if(idx == -1) {
-        		answer++;
-        	}
-        	else if(idx > 0) {
-        		visited[idx] = true;
-        		answer++;
-        	}
+        for(right=people.length-1; left<=right; right--) {
+        	if(people[left]+people[right] <= limit) left++;
+        	answer++;
         }
         
         return answer;
