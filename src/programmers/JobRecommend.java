@@ -1,9 +1,6 @@
 package programmers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Arrays;
 
 /**
  * 직업군 추천하기
@@ -14,31 +11,17 @@ public class JobRecommend {
 
 	public String solution(String[] table, String[] languages, int[] preference) {
         String answer = "";
-        
-        List<Map<String, Integer>> jobDesc = new ArrayList<>();
-        Map<Integer, String> jobs = new HashMap<>();
-        
-        for(int i=0; i<table.length; i++) {
-        	String s = table[i];
-        	String[] datas = s.split(" ");
-        	String job = datas[0];
-        	jobs.put(i, job);
-        	int point = 5;
-        	Map<String, Integer> map = new HashMap<>();
-        	for(int j=1; j<datas.length; j++) {
-        		String lang = datas[j];
-        		map.put(lang, point--);
-        	}
-        	jobDesc.add(map);
-        }
-        
+
         int max = -1;
-        for(int i=0; i<jobs.size(); i++) {
-        	String job = jobs.get(i);
-        	Map<String, Integer> desc = jobDesc.get(i);
+        for(String s : table) {
+        	String[] arr = s.split(" ");
+        	String job = arr[0];
         	int sum = 0;
-        	for(int j=0; j<languages.length; j++) {
-        		sum += desc.getOrDefault(languages[j], 0)*preference[j];
+        	for(int i=0; i<languages.length; i++) {
+        		int idx = Arrays.asList(arr).indexOf(languages[i]);
+        		if(idx > -1) {
+        			sum += (6-idx)*preference[i];
+        		}
         	}
         	if(sum > max) {
         		max = sum;
