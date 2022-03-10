@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-10T14:00:24.725Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="NzUh7ydDoWjgrnparOfJ" version="16.5.6" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-10T14:05:10.635Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="4Gkr5ml7fo2hpuUYFTo6" version="16.5.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2222" dy="1978" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -125,12 +125,6 @@
         <mxCell id="phJNswvs5Cys1aGq2eFr-50" value="수료증" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="690" y="137" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="phJNswvs5Cys1aGq2eFr-51" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=none;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="phJNswvs5Cys1aGq2eFr-83" target="phJNswvs5Cys1aGq2eFr-14">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="190" y="46" as="sourcePoint" />
-            <mxPoint x="240" y="-4" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="phJNswvs5Cys1aGq2eFr-52" value="파트너 사는 미리 결제되어 있는 컨텐츠를 제공받는다&lt;br&gt;결제 어디서?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="310" y="305" width="260" height="30" as="geometry" />
         </mxCell>
@@ -170,7 +164,7 @@
         <mxCell id="phJNswvs5Cys1aGq2eFr-64" value="온라인" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="90" y="590" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="phJNswvs5Cys1aGq2eFr-65" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="phJNswvs5Cys1aGq2eFr-11" target="phJNswvs5Cys1aGq2eFr-50">
+        <mxCell id="phJNswvs5Cys1aGq2eFr-65" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="phJNswvs5Cys1aGq2eFr-11" target="phJNswvs5Cys1aGq2eFr-50">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="410" y="600" as="sourcePoint" />
             <mxPoint x="460" y="550" as="targetPoint" />
@@ -219,7 +213,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="phJNswvs5Cys1aGq2eFr-78" value="회원만 가능" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="720" y="197" width="60" height="30" as="geometry" />
+          <mxGeometry x="750" y="197" width="60" height="33" as="geometry" />
         </mxCell>
         <mxCell id="phJNswvs5Cys1aGq2eFr-79" value="회원 id 유무" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="440" y="-45" width="90" height="30" as="geometry" />
@@ -236,13 +230,10 @@
         <mxCell id="phJNswvs5Cys1aGq2eFr-82" value="파트너사는 파트너사만의 컨텐츠에서 신청을 하는 것인지? 아니면 바로 교육만들으면 되는 것인지?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-290" y="90" width="520" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="phJNswvs5Cys1aGq2eFr-83" value="파트너 사 인증" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="100" y="-164" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="phJNswvs5Cys1aGq2eFr-84" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="phJNswvs5Cys1aGq2eFr-42" target="phJNswvs5Cys1aGq2eFr-83">
+        <mxCell id="phJNswvs5Cys1aGq2eFr-84" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="phJNswvs5Cys1aGq2eFr-42" target="phJNswvs5Cys1aGq2eFr-14">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="160" y="-64" as="sourcePoint" />
-            <mxPoint x="160" y="-204" as="targetPoint" />
+            <mxPoint x="160" y="-104" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="phJNswvs5Cys1aGq2eFr-87" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="phJNswvs5Cys1aGq2eFr-16" target="phJNswvs5Cys1aGq2eFr-80">
@@ -257,7 +248,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="phJNswvs5Cys1aGq2eFr-88" value="1. 교육 신청이 완료 시&lt;br&gt;2. 실습 계정 연동 시" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="840" y="750" width="160" height="30" as="geometry" />
+          <mxGeometry x="820" y="750" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="phJNswvs5Cys1aGq2eFr-89" value="파트너 사와의 결제는 어떤 식으로 ?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-90" y="-249" width="190" height="30" as="geometry" />
@@ -285,6 +276,9 @@
             <mxPoint x="360" y="500" as="sourcePoint" />
             <mxPoint x="410" y="450" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="phJNswvs5Cys1aGq2eFr-99" value="인증" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="160" y="-160" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
