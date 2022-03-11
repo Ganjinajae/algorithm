@@ -1,12 +1,9 @@
-<mxfile host="app.diagrams.net" modified="2022-03-10T23:55:59.851Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="9pK8fWEj9n-gTi1Bw4Nz" version="17.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-11T12:35:36.232Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="5-R4LzRRMHMwpUokwDhm" version="17.1.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2977" dy="2316" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2185" dy="1893" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="phJNswvs5Cys1aGq2eFr-93" value="" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="-260" y="1169" width="430" height="200" as="geometry" />
-        </mxCell>
         <mxCell id="phJNswvs5Cys1aGq2eFr-10" value="신청자" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="210" y="137" width="120" height="60" as="geometry" />
         </mxCell>
@@ -309,6 +306,9 @@
         </mxCell>
         <mxCell id="phJNswvs5Cys1aGq2eFr-110" value="1. 교육 신청 완료 시&lt;br&gt;2. 실습 계정 연동 시" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="800" y="760" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="o9yf5vbWGmIRhwobfJfE-1" value="신청자&#xa;&#xa;&#xa;관리자&#xa;&#xa;&#xa;교육&#xa;&#xa;&#xa;실습&#xa;&#xa;&#xa;수료&#xa;&#xa;&#xa;자격증&#xa;&#xa;&#xa;결제&#xa;&#xa;&#xa;문의&#xa;&#xa;&#xa;메일" style="text;whiteSpace=wrap;html=1;fontSize=30;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-460" y="1180" width="200" height="1130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
